@@ -2,17 +2,37 @@
 <head>
 	<meta charset="utf-8">
 	<script type="text/javascript" src='./medium/totalHammingDistance.js'></script>
+	<script type="text/javascript" src='./medium/addTwoNumbers.js'></script>
 </head>
 <body>
 	<script type="text/javascript">
-		var str = '.... . -.--   .--- ..- -.. .';
-		var num = 1000;
 		//var decodeStr = decodeMorse(str);
 		//console.log(zeros(30));
 		//console.log(maskify(str));
 		//console.log(maskify_best(str));
 		//console.log(SequenceSum.showSequence(6));
-		console.log(totalHammingDistance([4, 14, 2]));
+		//342 + 465
+		var x1 = new ListNode(2);
+		var x2 = new ListNode(4);
+		var x3 = new ListNode(3);
+		var y1 = new ListNode(5);
+		var y2 = new ListNode(6);
+		var y3 = new ListNode(4);
+		var z1 = new ListNode(0);
+		var w1 = new ListNode(7);
+		var w2 = new ListNode(3);
+		var a1 = new ListNode(9);
+		var a2 = new ListNode(9);
+		var b1 = new ListNode(1);
+
+		x1.next = x2;
+		x2.next = x3;
+		y1.next = y2;
+		y2.next = y3;
+		w1.next = w2;
+		a1.next = a2;
+		let test = addTwoNumbers(b1, a1)
+		console.log(test);
 	</script>
 </body>
 </html>
