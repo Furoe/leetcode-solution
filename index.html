@@ -3,6 +3,7 @@
 	<meta charset="utf-8">
 	<script type="text/javascript" src='./medium/totalHammingDistance.js'></script>
 	<script type="text/javascript" src='./medium/addTwoNumbers.js'></script>
+	<script type="text/javascript" src='./medium/removeNthFromEnd.js'></script>
 </head>
 <body>
 	<script type="text/javascript">
@@ -12,27 +13,21 @@
 		//console.log(maskify_best(str));
 		//console.log(SequenceSum.showSequence(6));
 		//342 + 465
-		var x1 = new ListNode(2);
-		var x2 = new ListNode(4);
+		var x1 = new ListNode(1);
+		var x2 = new ListNode(2);
 		var x3 = new ListNode(3);
-		var y1 = new ListNode(5);
-		var y2 = new ListNode(6);
-		var y3 = new ListNode(4);
-		var z1 = new ListNode(0);
-		var w1 = new ListNode(7);
-		var w2 = new ListNode(3);
-		var a1 = new ListNode(9);
-		var a2 = new ListNode(9);
-		var b1 = new ListNode(1);
+		var x4  = new ListNode(4);
+		var x5 = new ListNode(5);
+		
 
 		x1.next = x2;
 		x2.next = x3;
-		y1.next = y2;
-		y2.next = y3;
-		w1.next = w2;
-		a1.next = a2;
-		let test = addTwoNumbers(b1, a1)
-		console.log(test);
+		x3.next = x4;
+		x4.next = x5;
+		//console.log(x1);
+		//let test = addTwoNumbers(b1, a1);
+		let test1 = removeNthFromEnd(x1, 2);
+		console.log(test1);
 	</script>
 </body>
 </html>
