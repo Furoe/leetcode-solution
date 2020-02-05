@@ -5,6 +5,8 @@
 	<script type="text/javascript" src='./medium/addTwoNumbers.js'></script>
 	<script type="text/javascript" src='./medium/removeNthFromEnd.js'></script>
 	<script type="text/javascript" src='./medium/threeSum.js'></script>
+	<script type="text/javascript" src='./easy/twoSum.js'></script>
+	<script type="text/javascript" src='./easy/isPalindrome.js'></script>
 </head>
 <body>
 	<script type="text/javascript">
@@ -20,6 +22,7 @@
 		var x4  = new ListNode(4);
 		var x5 = new ListNode(5);
 		var arr = [-1, 0, 1, 2, -1, -4];
+		var arr1 = [2, 7, 11, 15];
 		
 
 		x1.next = x2;
@@ -29,8 +32,9 @@
 		//console.log(x1);
 		//let test = addTwoNumbers(b1, a1);
 		//let test1 = removeNthFromEnd(x1, 2);
-		var arr1 = threeSum(arr);
-		console.log(arr1);
+		//var arr1 = threeSum(arr);
+		var arr2 = twoSum(arr1, 9);
+		console.log(arr2);
 	</script>
 </body>
 </html>
