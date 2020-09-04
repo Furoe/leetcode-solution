@@ -23,36 +23,41 @@ var strStr = function(haystack, needle) {
 //KMP算法实现
 var strStr_KMP = function(haystack, needle) {
 	if(needle == "") return 0;
-	var next = [];
-	for(var i = 0;i < needle.length;i++){
-		next[i] = 0;
-		var temp_str = needle.substr(0, i+1);
-		for(var j = 1;j < temp_str.length;j++){
-			var l_str = temp_str.substr(0, j);
-			var r_str = temp_str.substr(temp_str.length-j, j);
-			if(l_str === r_str){
-				next[i] = Math.max(l_str.length, next[i]);
+	var i = 1;
+	var j = 0;
+	var next = [0];
+	while(i < needle.length){
+		if(needle[i] === needle[j]){
+			next[i] = j + 1;
+			i++;
+			j++;
+		}else{
+			if(j === 0){
+				next[i++] = 0;
+			}else if(j > 0){
+				j = next[j-1];
 			}
 		}
 	}
-	console.log(next);
-	for(var i = 0; i <= (haystack.length-needle.length);i++){
-		for(var j = 0;j < needle.length;j++){
-			if(needle[j] == haystack[i+j]){
-				if(j == needle.length-1){
-					return i;
-				}
-				continue;
+	i = 0;
+	j = 0;
+	while(i <= haystack.length && j < needle.length){
+		if(haystack[i] == needle[j]){
+			i++;
+			j++;
+		}else{
+			if(j === 0){
+				i++;
 			}else{
-				if(j >= 1){
-					i += j - next[j-1];
-				console.log(i, j, next[j], j - next[j-1]);
-				}
-				break;
+				j = next[j-1];
 			}
 		}
 	}
-	return -1;
+	if(j === needle.length){
+		return i - j;
+	}else{
+		return -1;
+	}
 };
 
 //Bloye-Moore方法
