@@ -70,7 +70,18 @@
 
 		//实现strStr
 		//console.log(strStr('aaaaa', 'bba'));
-		console.log(strStr_KMP('BBC ABCDAB ABCDABCDABDE', 'ABCDABD'));
+		//console.log();
+		console.time("strStr_KMP");
+		//BBC ABCDAB ABCDABCDABDE ABCDABD
+		let a = strStr_KMP('BBC ABCDAB ABCDABCDABDE', 'ABCDABD');
+		//console.log(a);
+		console.timeEnd("strStr_KMP");
+		console.time("strStr_BM");
+		let b = strStr_BM('BBC ABCDAB ABCDABCDABDE', 'ABCDABD');
+		//console.log(b);
+		console.timeEnd("strStr_BM");
+
+		console.log(strStr_BM('aaaaa', 'bba'));
 	</script>
 </body>
 </html>
