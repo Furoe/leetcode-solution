@@ -133,7 +133,7 @@ var strStr_BM = function(haystack, needle) {
 	const bc = genBC(needle);
 	const {suffix, prefix} = genGS(needle);
 	let step = 1;
-	for(let i = 0;i < mainLen - patternLen;i = i + step){
+	for(let i = 0;i <= mainLen - patternLen;i = i + step){
 		let substr = haystack.substr(i, patternLen);
 		const {patternBadCharIndex, mainBadCharIndex} = findBadChar(substr, needle, bc);
 		if(mainBadCharIndex === -1){
@@ -141,7 +141,7 @@ var strStr_BM = function(haystack, needle) {
 		}
 		let stepForBC = mainBadCharIndex - patternBadCharIndex;
 		let stepForGS = -1;
-		if(mainBadCharIndex < patternBadCharIndex - 1){
+		if(mainBadCharIndex <= patternBadCharIndex - 1){
 			stepForGS = moveByGS(patternBadCharIndex, patternLen, suffix, prefix);
 		}
 		step = Math.max(stepForBC, stepForGS);
