@@ -11,3 +11,4 @@ practice
 - [x] 爬楼梯
 - [x] 简化路径
 - [x] 字符串数字化(parseInt)
+- [x] 接雨水
