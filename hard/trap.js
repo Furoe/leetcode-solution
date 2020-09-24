@@ -19,3 +19,21 @@ var trap = function(height) {
 	}
 	return count;
 };
+
+var trap1 = function(height){
+	let left = 0;
+	let right = height.length - 1;
+	let count = 0;
+	let left_max = 0;
+	let right_max = 0;
+	while(left < right){
+		if(height[left] < height[right]){
+			height[left] >= left_max?(left_max = height[left]):(count += left_max - height[left]);
+			++left;
+		}else{
+			height[right] >= right_max?(right_max = height[right]):(count += right_max - height[right]);
+			--right;
+		}
+	}
+	return count;
+};
