@@ -2,6 +2,7 @@
 <head>
 	<meta charset="utf-8">
 	<script type="text/javascript" src='./hard/trap.js'></script>
+	<script type="text/javascript" src='./hard/trapRainWater.js'></script>
 	<script type="text/javascript" src='./medium/totalHammingDistance.js'></script>
 	<script type="text/javascript" src='./medium/addTwoNumbers.js'></script>
 	<script type="text/javascript" src='./medium/removeNthFromEnd.js'></script>
@@ -15,6 +16,8 @@
 	<script type="text/javascript" src='./medium/countCoin.js'></script>
 	<script type="text/javascript" src='./medium/simplifyPath.js'></script>
 	<script type="text/javascript" src='./medium/myAtoi.js'></script>
+	<script type="text/javascript" src='./medium/integerBreak.js'></script>
+	<script type="text/javascript" src='./medium/cuttingRope.js'></script>
 	<script type="text/javascript" src='./easy/twoSum.js'></script>
 	<script type="text/javascript" src='./easy/isPalindrome.js'></script>
 	<script type="text/javascript" src='./easy/romanToInt.js'></script>
@@ -23,6 +26,7 @@
 	<script type="text/javascript" src='./easy/searchInsert.js'></script>
 	<script type="text/javascript" src='./easy/removeDuplicates.js'></script>
 	<script type="text/javascript" src='./easy/climbStairs.js'></script>
+	<script type="text/javascript" src='./sorts/sortAlg.js'></script>
 </head>
 <body>
 	<script type="text/javascript">
@@ -101,11 +105,24 @@
 		//路径格式化
 		//console.log(simplifyPath("/home//foo/"));
 		//字符串数字化
-		console.log(myAtoi('42'));
+		//console.log(myAtoi('42'));
 
 		//接雨水
-		console.log(trap([0,1,0,2,1,0,1,3,2,1,2,1]));
-		console.log(trap1([0,1,0,2,1,0,1,3,2,1,2,1]));
+		//console.log(trap([0,1,0,2,1,0,1,3,2,1,2,1]));
+		//console.log(trap1([0,1,0,2,1,0,1,3,2,1,2,1]));
+		//三维接雨水
+		//console.log(trapRainWater([[1,4,3,1,3,2],[3,2,1,3,2,4],[2,3,3,2,3,1]]));
+
+		//拆分求最大乘积
+		console.log(integerBreak(10));
+		//剪绳子
+		console.log(cuttingRope(10));
+
+		console.log(bubbleSort([6, 5, 3, 1, 8, 7, 2, 4]));
+		console.log(selectSort([6, 5, 3, 1, 8, 7, 2, 4]));
+		console.log(insertSort([6, 5, 3, 1, 8, 7, 2, 4]));
+		console.log(quickSort([6, 5, 3, 1, 8, 7, 2, 4], 0, 7));
+		console.log(mergeSort([6, 5, 3, 1, 8, 7, 2, 4]));
 	</script>
 </body>
 </html>
