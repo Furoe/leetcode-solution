@@ -101,21 +101,67 @@ var quickSort = function(arr, left, right){
 var heapLen;
 //堆排序
 function heapify(arr, i){
-
+	let left = 2*i + 1;
+	let right = 2*i + 2;
+	let largest = i;
+	if(left < heapLen && arr[left] > arr[largest]){
+		largest = left;
+	}
+	if(right < heapLen && arr[right] > arr[largest]){
+		largest = right;
+	}
+	if(largest != i){
+		var temp = arr[largest];
+		arr[largest] = arr[i];
+		arr[i] = temp;
+		arr = heapify(arr, largest);
+	}
+	return arr;
 }
 
 function buildMaxHeap(arr){
 	heapLen = arr.length;
-	for(let i = Math.floor(len/2);i >= 0;i--){
-		heapify(arr, i);
+	for(let i = Math.floor(heapLen/2);i >= 0;i--){
+		arr = heapify(arr, i);
 	}
+	return arr;
 }
 
 var heapSort = function(arr){
-	buildMaxHeap(arr);
+	arr = buildMaxHeap(arr);
 	for(let i = arr.length-1;i > 0;i--){
 		var temp = arr[i];
 		arr[i] = arr[0];
 		arr[0] = temp;
+		heapLen--;
+		arr = heapify(arr, 0);
 	}
+	return arr;
+};
+
+//基数排序
+var radixSort = function(arr, maxDigit){
+	let dev = 1;
+	let mod = 10;
+	let count = [];
+	for(let i = 0;i < maxDigit;i++,dev *= 10, mod *= 10){
+		for(let j = 0;j < arr.length;j++){
+			var bucket = parseInt((arr[j]%mod)/dev);
+			if(count[bucket] == null){
+				count[bucket] = [];
+			}
+			count[bucket].push(arr[j]);
+		}
+
+		var pos = 0;
+		for(let k = 0;k < count.length;k++){
+			var val = null;
+			if(count[k] != null){
+				while((val = count[k].shift()) != null){
+					arr[pos++] = val;
+				}
+			}
+		}
+	}
+	return arr;
 };
