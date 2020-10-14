@@ -19,7 +19,6 @@ var longestPalindrome = function(s) {
 					break;
 				}
 			}
-			console.log(i, j);
 			if(flag === 1 && j-i+1 > resLen) {
 				res = s.substr(i, j-i+1);
 				resLen = Math.max(resLen, j - i + 1);
