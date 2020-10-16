@@ -15,7 +15,6 @@
  * @return {ListNode}
  */
 var addTwoNumbersLinkList = function(l1, l2) {
-	console.log(l1, l2);
 	let p1 = l1;
 	let p2 = l2;
 	let l3 = new ListNode(null);

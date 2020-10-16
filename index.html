@@ -25,6 +25,7 @@
 	<script type="text/javascript" src='./medium/findDuplicate.js'></script>
 	<script type="text/javascript" src='./medium/detectCycle.js'></script>
 	<script type="text/javascript" src='./medium/addTwoNumbersLinkList.js'></script>
+	<script type="text/javascript" src='./medium/nthSuperUglyNumber.js'></script>
 	<script type="text/javascript" src='./easy/twoSum.js'></script>
 	<script type="text/javascript" src='./easy/isPalindrome.js'></script>
 	<script type="text/javascript" src='./easy/romanToInt.js'></script>
@@ -161,6 +162,9 @@
 		l2.next = new NodeList(9);
 		l2.next.next = new NodeList(2);
 		console.log(addTwoNumbersLinkList(l1, l2));
+
+		//给定k个质因子，寻找第n个由这几个质因子组成的丑数
+		console.log(nthSuperUglyNumber(12, [2, 7, 13, 19]));
 		
 	</script>
 </body>
